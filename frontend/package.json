@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "scripts": {
+    "build": "npx webpack-cli build --mode production"
+  }
+}
