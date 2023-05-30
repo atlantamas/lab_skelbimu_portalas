@@ -1,15 +1,34 @@
 import path from "path"
 
-export default {
+export default
+{
     entry: ["./src/index.mjs"],
-    output: {
-        filename: "webpack-bundle.mjs",
+    output:
+    {
+        filename: "webpack_bundle.mjs",
         path: path.resolve("./public/")
     },
     cache: false,
     devtool: "source-map",
     experiments:
     {
-        topLevevelAwait: true
+        topLevelAwait: true
+    },
+    module:
+    {
+        rules: [
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use:
+                {
+                    loader: "babel-loader",
+                    options:
+                    {
+                        presets: ["@babel/preset-react"]
+                    }
+                }
+            }
+        ]
     }
 }
